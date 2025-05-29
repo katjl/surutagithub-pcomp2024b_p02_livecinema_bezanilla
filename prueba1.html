@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="https://use.typekit.net/mwx0bnr.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superposition Exhibition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pragmatica:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #fff;
+      color: #000;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      display: flex;
+    }
+
+    h1, h2 {
+      font-family: "pragmatica-extended", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .scroll-bar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 100vh;
+      background-color: #fff;
+      z-index: 100;
+      overflow: hidden;
+    }
+
+    .line {
+      width: 15px;
+      height: 2px;
+      background-color: #000;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    }
+
+    .content {
+      margin-left: 60px;
+      max-width: 960px;
+      padding: 2rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px solid #000;
+    }
+
+    a:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .section {
+      border-top: 1px solid #000;
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<audio id="bg-audio" loop preload="auto">
+  <source src="data_matrix_style.mp3" type="audio/mpeg">
+  <source src="data_matrix_style.ogg" type="audio/ogg">
+</audio>
+
+<script>
+  const audio = document.getElementById('bg-audio');
+  let hasStarted = false;
+
+  window.addEventListener('scroll', () => {
+    if (!hasStarted) {
+      audio.volume = 0.1; // Volumen sutil
+      audio.play().catch(e => console.log('Autoplay bloqueado:', e));
+      hasStarted = true;
+    }
+  });
+</script>
+
+<body>
+  <div class="scroll-bar" id="scrollBar"></div>
+
+  <div class="content">
+    <h1>Superposition Exhibition</h1>
+    <header><h3>Sofía Bezanilla, Pía Garrido, Katherine Joo, Magdalena Mira, Paula Muñoz </h3></header>
+
+    <div class="section">
+      <h2>¿Qué es Superposition?</h2>
+      <p>
+        <em>Superposition</em> es una performance audiovisual creada por el artista japonés Ryoji Ikeda. Inspirada en la mecánica cuántica, especialmente el principio de superposición, la obra explora cómo el arte y la ciencia pueden converger en una experiencia sensorial única. Utilizando pantallas, sonidos electrónicos, datos científicos y performers en vivo, la pieza confronta al espectador con los límites de la percepción y la realidad.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Sobre Ryoji Ikeda</h2>
+      <p>
+        Ryoji Ikeda (nacido en 1966 en Gifu, Japón) es un compositor, artista sonoro y visual reconocido internacionalmente por su enfoque minimalista y por trabajar con datos, frecuencias y estructuras matemáticas. A lo largo de su carrera, Ikeda ha creado obras inmersivas que combinan ciencia, matemáticas y arte en instalaciones y performances que desafían la percepción humana.
+      </p>
+      <p>
+        Comenzó su carrera en la música electrónica experimental en los años 90 y ha colaborado con artistas como Carsten Nicolai (como parte del dúo Cyclo). Sus obras más reconocidas incluyen <em>datamatics</em>, <em>test pattern</em>, <em>spectra</em>, y <em>micro | macro</em>, presentadas en instituciones como el Centre Pompidou (París), ZKM (Karlsruhe), y Park Avenue Armory (Nueva York).
+      </p>
+      <p>
+        El proyecto <em>Superposition</em> nació de su fascinación por la física cuántica y la necesidad de traducir complejos conceptos científicos en una experiencia estética. Esta obra marca un punto culminante en su interés por cruzar disciplinas y crear obras donde la ciencia se convierte en arte.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const scrollBar = document.getElementById('scrollBar');
+    const numberOfLines = 100;
+    const lines = [];
+
+    for (let i = 0; i < numberOfLines; i++) {
+      const line = document.createElement('div');
+      line.classList.add('line');
+      const top = Math.floor(Math.random() * window.innerHeight * 2);
+      line.style.top = `${top}px`;
+      scrollBar.appendChild(line);
+      lines.push({ el: line, baseTop: top });
+    }
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      lines.forEach(({ el, baseTop }) => {
+        const offset = (scrollY * 0.2) % 50;
+        el.style.transform = `translateX(${Math.sin((scrollY + baseTop) * 0.01) * 5}px)`;
+        el.style.opacity = 0.5 + 0.5 * Math.sin((scrollY + baseTop) * 0.01);
+      });
+    });
+  </script>
+</body>
+<footer><h5>Pensamiento Computacional</h5></footer>
+</html>
