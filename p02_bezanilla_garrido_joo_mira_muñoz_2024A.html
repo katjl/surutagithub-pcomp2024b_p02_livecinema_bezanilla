@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="https://use.typekit.net/mwx0bnr.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superposition Exhibition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+
+    body {
+      margin: 0;
+      background-color: #fff;
+      color: #000;
+      font-family: "pragmatica-extended", sans-serif;
+      font-weight: 200;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 1.6;
+      display: flex;
+    }
+
+    h1, h2 {
+      font-family: 'Rubik Broken Fax', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 100px;
+    }
+
+    h3 {
+      font-family: "pragmatica-extended", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 20px;
+    }
+    body {
+      margin: 0;
+      margin-right: 20px;
+
+  .scroll-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 100;
+    overflow: hidden;
+    }
+
+    p {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin: 0;
+}
+
+    .line {
+      width: 15px;
+      height: 2px;
+      background-color: #000;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    }
+
+.content {
+  margin-left: 60px;
+  width: calc(100% - 60px);
+  max-width: none;
+
+    a {
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px solid #000;
+    }
+
+    a:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .section {
+      border-top: 1px solid #000;
+      padding-top: 5px;
+    }
+
+    .seccion {
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      padding: 5px;
+    }
+
+    .derecha {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .izquierda {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .bloque-texto {
+      width: 50%;
+      font-family: Arial, sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .subtitulo {
+      font-family: "pragmatica-extended", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 40px;
+    }
+
+    .subtitulo-derecha {
+      text-align: right;
+    }
+
+    .subtitulo-izquierda {
+      text-align: left;
+    }
+
+    .palabra-centro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .palabra-centro h1 {
+      font-size: 100px;
+      font-family: "pragmatica-extended", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      letter-spacing: -15px;
+      transition: all 0.5s ease;
+    }
+
+    .frase-centro {
+      font-family: Pragmatica Extended, sans-serif;
+      font-weight: 200;
+      font-size: 20px;
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      line-height: 1.6;
+      color: #000;
+    }
+
+    .cuadro-centro-limpio {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: justify;
+      font-family: "pragmatica-extended", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1.6;
+      background-color: transparent;
+    }
+
+    .tabla-conceptos {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      font-family: "pragmatica-extended", sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .tabla-fila {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .columna {
+      flex: 1;
+    }
+
+    .concepto {
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .implicacion {
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .encabezado .concepto,
+    .encabezado .implicacion {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .imagen-pequena {
+      width: 200px;
+      height: auto;
+    }
+
+    .imagen-mediana {
+      width: 400px;
+      height: auto;
+    }
+
+    .imagen-grande {
+      width: 600px;
+      height: auto;
+    }
+
+    .imagen-completa {
+  width: 90vw;
+  height: auto;
+  display: block;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="scroll-bar" id="scrollBar"></div>
+
+  <div class="content">
+    <h1 data-aos="fade-down">Superposition Exhibition</h1>
+    <header>
+      <h3 data-aos="fade-up">Sofía Bezanilla, Pía Garrido, Katherine Joo, Magdalena Mira, Paula Muñoz</h3>
+    </header>
+
+    
+    <div class="contenedor">
+      <div class="seccion derecha" data-aos="fade-left">
+        <div class="bloque-texto">
+          <img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 5.png" alt="ikeda" class="imagen-grande">
+          <h2 class="subtitulo subtitulo-derecha" data-aos="fade-left">Ryoji Ikeda</h2>
+          <p><strong>Ryoji Ikeda</strong>, nacido en 1966 en Gifu, Japón, es uno de los principales compositores electrónicos y artistas visuales de Japón. Orquesta, sonidos, visuales, materiales. Sus exploraciones creativas abarcan las matemáticas, la mecánica cuántica y la filosofía, desplegando una compleja síntesis técnica de sonido e imagen para expresar concretamente sus perspectivas personales.</p>
+        </div>
+      </div>
+
+      <div class="seccion izquierda" data-aos="fade-right">
+        <div class="bloque-texto">
+          <p>Sus obras revelan las conexiones entre los intereses que lo impulsan y el mundo en general. Al mismo tiempo, las imágenes de las propias obras reúnen los elementos clásicos del arte de los nuevos medios, pareciendo encarnar la visión, compartida por muchos, de que la tecnología digital se ha convertido en el tema principal del arte actual.</p>
+        </div>
+      </div> 
+      
+    <div class="palabra-centro" data-aos="fade-up">
+      <div>
+      <p><img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 12.png" alt="expo" class="imagen-grande"></p>
+      </div>
+    </div>
+
+      <h2 class="subtitulo subtitulo-derecha" data-aos="fade-left">Filosofía</h2>
+
+      <div class="seccion derecha" data-aos="fade-left">
+  <div class="bloque-texto">
+    <img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 4.png" alt="expo" class="imagen-pequena">
+  </div>
+</div>
+
+      <div class="seccion derecha" data-aos="fade-left">
+        <div class="bloque-texto">
+          <p>Ikeda utiliza la productividad y eficiencia de la tecnología para transformar el mundo material en un universo ilimitado, revelando la continuidad y discreción ocultas dentro de varios sistemas reales y reflejando una conciencia del orden interno.</p>
+        </div>
+      </div>
+
+      <div class="seccion izquierda" data-aos="fade-left">
+      <img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 44.png" alt="expo" class="imagen-mediana">
+    </div> 
+
+    <h2 class="subtitulo subtitulo-izquierda" data-aos="fade-right">Enfoque de Ryoji</h2>
+        <div class="palabra-centro" data-aos="fade-up">
+      <div>
+      <img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 11.png" alt="expo" class="imagen-grande">
+      </div>
+    </div>
+    <div class="seccion derecha" data-aos="fade-left">
+      <div class="bloque-texto">
+        <p>Ryoji profundiza hacia la naturaleza física del sonido. Desde la perspectiva de la física, los sonidos son vibraciones transmitidas en la forma de longitudes de ondas.</p>
+      </div>
+    </div>
+
+  
+    <div class="seccion izquierda" data-aos="fade-right">
+      <div class="bloque-texto">
+        <p>Su aspiración artística de usar los números, el lenguaje de la simulación, para revelar un universo que trasciende lo comprensible a escala humana. Resume la exposición así: «Finalmente, creé una composición que se podía navegar y que ofrecía a los visitantes un gran viaje a través de los fundamentos del universo».</p>
+      </div>
+    </div>
+
+    <h2 class="subtitulo subtitulo-izquierda" data-aos="fade-right">Impacto</h2>
+
+    <div class="seccion izquierda" data-aos="fade-right">
+      <div class="bloque-texto">
+        <p>Ikeda usó un método de yuxtaponer un medio sonoro análogo y uno digital, imágenes, para crear mayor impacto entre sus trabajos. Su camino creativo era formar sus trabajos con la guía de dos tecnologías distintas y luego mezclarlas. Esto generó un gran aprecio desde la comunidad científica.</p>
+      </div>
+    </div>
+
+    <div class="palabra-centro" data-aos="fade-up">
+      <div>
+        <h1>superposition</h1>
+        <p class="frase-centro">
+          «Finalmente, creé una composición que se podía navegar y que ofrecía a los visitantes un gran viaje a través de los fundamentos del universo».
+        </p>
+        <img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 18.png" alt="expo" class="imagen-grande">
+      </div>
+    </div>
+
+
+
+
+
+<div class="seccion izquierda" data-aos="fade-right">
+  <img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 21.png" alt="expo" class="imagen-mediana"><p>Superposition es un proyecto del 2012 sobre cómo entendemos la realidad de la naturaleza en una escala atómica. Está inspirado por las nociones matemáticas de la mecánica cuántica. Utilizando intérpretes, diseño de sonido, luz, imágenes, pantallas de vídeo sincronizadas, transmisiones de contenido en tiempo real, esculturas sonoras digitales y simetría.</p>
+</div>
+
+<div class="cuadro-centro-limpio">
+  <p>
+    IKEDA CREÓ SUPERPOSICIÓN, CUYO OBJETIVO ES COMPRENDER UN NUEVO TIPO DE INFORMACIÓN A TRAVÉS DEL ARTE.
+  </p>
+</div>
+
+
+<div class="seccion izquierda" data-aos="fade-right">
+  <div class="bloque-texto">
+    <p>“Es una pieza de arte escénico, que nunca explica la mecánica cuántica. Más bien está inspirada en ella. Algunas de las expresiones son científicamente correctas. Utilizo muchos conjuntos de datos de la NASA, etc., pero la construcción, la composición, es muy intuitiva porque soy artista. Así que es híbrido.” (Ryoji Ikeda)</p>
+  </div>
+</div>
+
+    <div class="palabra-centro" data-aos="fade-up">
+      <div>
+<img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 23.png" alt="expo" class="imagen-grande">
+      </div>
+    </div>
+
+
+<div class="palabra-centro" data-aos="fade-up">
+  <div>
+    <h1>superposition</h1>
+  </div>
+</div>
+
+
+<div class="seccion derecha" data-aos="fade-left">
+  <img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 59.png" alt="expo" class="imagen-mediana">
+  <div class="bloque-texto">
+    <p>Ikeda creó Superposición, cuyo objetivo es comprender un nuevo tipo de información a través del arte. Una pieza para "desafiar un poco el pensamiento de la gente". ¿Por qué un concepto tan maravillosamente desconcertante y atractivo debería ser accesible sólo para unos pocos, cuando es tan relevante para todos?</p>
+  </div>
+</div>
+
+<div class="seccion izquierda" data-aos="fade-right">
+  <div class="bloque-texto">
+    <p>Todas las imágenes tienen relevancia para el trasfondo científico de la obra, pero incluso si no lo entiendes, igual podrás disfrutar la experiencia. Como dice Ikeda: «El espectáculo es una experiencia musical inmersiva y visceralmente emocionante, ya seas amante de la música y el arte, físico o ambos. La mecánica cuántica juega un papel clave en mi enfoque compositivo, pero será invisible para cualquier espectador que no la comprenda, y eso no impedirá que disfrute de la obra».</p>
+  </div>
+</div>
+
+
+<div class="seccion izquierda" data-aos="fade-right">
+  <div class="bloque-texto">
+    <p>“‘Superposition’, trata sobre la tensión entre lo que se puede graficar, trazar y representar perfectamente, y lo que no. Le interesan los datos fríos —la “superposición” es un concepto de la mecánica cuántica—, pero le interesa más cómo podemos usarlos como lenguaje, cómo podemos hacerlos hablar o cantar. Es una especie de traductor, que convierte principios en palabras, números en código, código en sonido e imagen” (Ratcliff, Ben (19 de octubre de 2014) Putting Cold Data in the Service of Language and Music).</p>
+  </div>
+  <img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\image 58.png" alt="expo" class="imagen-mediana">
+</div>
+
+
+<img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\diagrama.png" alt="expo" class="imagen-completa">
+
+<div class="palabra-centro" data-aos="fade-up">
+  <div>
+    <h1>5 conceptos de Lev Manovich</h1>
+  </div>
+</div>
+
+
+<div class="tabla-conceptos" data-aos="fade-up">
+  <div class="tabla-fila encabezado">
+    <div class="columna concepto">CONCEPTO</div>
+    <div class="columna implicacion">QUÉ IMPLICA</div>
+  </div>
+
+  <div class="tabla-fila">
+    <div class="columna concepto">MODULARIDAD</div>
+    <div class="columna implicacion">La pieza se compone de módulos independientes (audio, imagen, performers, fenómenos físicos) que funcionan como bloques que se combinan.</div>
+  </div>
+
+  <div class="tabla-fila">
+    <div class="columna concepto">AUTOMATIZACIÓN</div>
+    <div class="columna implicacion">La obra se apoya en software que ejecuta funciones visuales y sonoras en tiempo real, minimizando la intervención humana directa.</div>
+  </div>
+
+  <div class="tabla-fila">
+    <div class="columna concepto">VARIABILIDAD</div>
+    <div class="columna implicacion">Cada presentación de Superposition puede diferir dependiendo del montaje, la interacción de los performers o el entorno físico.</div>
+  </div>
+
+  <div class="tabla-fila">
+    <div class="columna concepto">TRANSCODIFICACIÓN</div>
+    <div class="columna implicacion">Ikeda transforma datos numéricos (por ejemplo, secuencias de ADN, datos atómicos) en sonidos e imágenes, dando una lectura cultural a datos computacionales.</div>
+  </div>
+
+  <div class="tabla-fila">
+    <div class="columna concepto">TRANSCODIFICACIÓN</div>
+    <div class="columna implicacion">Ikeda transforma datos numéricos (por ejemplo, secuencias de ADN, datos atómicos) en sonidos e imágenes, dando una lectura cultural a datos computacionales.</div>
+  </div>
+</div>
+
+<div class="palabra-centro" data-aos="fade-up">
+  <div>
+    <h1>conclusión</h1>
+  </div>
+</div>
+
+<div class="seccion izquierda" data-aos="fade-right">
+  <div class="bloque-texto">
+    <p>Lo que más nos llamó la atención de Superposition fue cómo Ryoji Ikeda mezcla la precisión de la tecnología con lo impredecible de la naturaleza, usando distintos medios artísticos para expresar realidades científicas complejas sin la necesidad de mayor conocimiento.</p>
+  </div>
+</div>
+<div class="seccion derecha" data-aos="fade-left">
+  <div class="bloque-texto">
+    <p>La obra nos hace pensar en hasta dónde puede llegar el arte y el lenguaje en la era digital y cómo esta puede ser una herramienta para comunicar de de una forma accesible.</p>
+  </div>
+</div>
+
+
+<img src="C:\Users\katjo\Desktop\RIOJI IKEDA\Ryoji Ikeda\Ryoji1-1440x810.jpg" alt="expo" class="imagen-completa">
+
+  </div> <audio id="bg-audio" loop preload="auto">
+    <source src="data_matrix_style.mp3" type="audio/mpeg">
+    <source src="data_matrix_style.ogg" type="audio/ogg">
+  </audio>
+
+  <script>
+    const scrollBar = document.getElementById('scrollBar');
+    const numberOfLines = 100;
+    const lines = [];
+
+    for (let i = 0; i < numberOfLines; i++) {
+      const line = document.createElement('div');
+      line.classList.add('line');
+      const top = Math.floor(Math.random() * window.innerHeight * 2);
+      line.style.top = `${top}px`;
+      scrollBar.appendChild(line);
+      lines.push({ el: line, baseTop: top });
+    }
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      lines.forEach(({ el, baseTop }) => {
+        const offset = (scrollY * 0.2) % 50;
+        el.style.transform = `translateX(${Math.sin((scrollY + baseTop) * 0.01) * 5}px)`;
+        el.style.opacity = 0.5 + 0.5 * Math.sin((scrollY + baseTop) * 0.01);
+      });
+    });
+
+
+    const audio = document.getElementById('bg-audio');
+    let hasStarted = false;
+    window.addEventListener('scroll', () => {
+      if (!hasStarted) {
+        audio.volume = 0.1;
+        audio.play().catch(e => console.log('Autoplay bloqueado:', e));
+        hasStarted = true;
+      }
+    });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out',
+      once: true
+    });
+  </script>
+  </body>
+</html>
