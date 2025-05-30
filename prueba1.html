@@ -5,22 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Superposition Exhibition</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pragmatica:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       background-color: #fff;
       color: #000;
-      font-family: Arial, sans-serif;
+      font-family: Pragmatica Extended, sans-serif;
+      font-family: "pragmatica-extended", sans-serif;
+      font-weight: 400;
+      font-style: normal;
       font-size: 16px;
       line-height: 1.6;
       display: flex;
     }
 
     h1, h2 {
-      font-family: "pragmatica-extended", sans-serif;
+      font-family: 'Rubik Broken Fax', sans-serif;
       font-weight: 400;
       font-style: normal;
+      font-size: 60px
     }
 
     .scroll-bar {
@@ -94,26 +98,56 @@
     <h1>Superposition Exhibition</h1>
     <header><h3>Sofía Bezanilla, Pía Garrido, Katherine Joo, Magdalena Mira, Paula Muñoz </h3></header>
 
-    <div class="section">
-      <h2>¿Qué es Superposition?</h2>
-      <p>
-        <em>Superposition</em> es una performance audiovisual creada por el artista japonés Ryoji Ikeda. Inspirada en la mecánica cuántica, especialmente el principio de superposición, la obra explora cómo el arte y la ciencia pueden converger en una experiencia sensorial única. Utilizando pantallas, sonidos electrónicos, datos científicos y performers en vivo, la pieza confronta al espectador con los límites de la percepción y la realidad.
-      </p>
-    </div>
+<style>
+  .seccion {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
 
-    <div class="section">
-      <h2>Sobre Ryoji Ikeda</h2>
-      <p>
-        Ryoji Ikeda (nacido en 1966 en Gifu, Japón) es un compositor, artista sonoro y visual reconocido internacionalmente por su enfoque minimalista y por trabajar con datos, frecuencias y estructuras matemáticas. A lo largo de su carrera, Ikeda ha creado obras inmersivas que combinan ciencia, matemáticas y arte en instalaciones y performances que desafían la percepción humana.
-      </p>
-      <p>
-        Comenzó su carrera en la música electrónica experimental en los años 90 y ha colaborado con artistas como Carsten Nicolai (como parte del dúo Cyclo). Sus obras más reconocidas incluyen <em>datamatics</em>, <em>test pattern</em>, <em>spectra</em>, y <em>micro | macro</em>, presentadas en instituciones como el Centre Pompidou (París), ZKM (Karlsruhe), y Park Avenue Armory (Nueva York).
-      </p>
-      <p>
-        El proyecto <em>Superposition</em> nació de su fascinación por la física cuántica y la necesidad de traducir complejos conceptos científicos en una experiencia estética. Esta obra marca un punto culminante en su interés por cruzar disciplinas y crear obras donde la ciencia se convierte en arte.
-      </p>
-    </div>
+  .derecha {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .izquierda {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .bloque-texto {
+    width: 50%;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+</style>
+
+<!-- PÁRRAFO A LA DERECHA -->
+<div class="seccion derecha">
+  <div class="bloque-texto">
+    <p><strong>Ryoji Ikeda</strong>, nacido en 1966 en Gifu, Japón, es uno de los principales compositores electrónicos y artistas visuales de Japón. Orquesta, sonidos, visuales, materiales. Sus exploraciones creativas abarcan las matemáticas, la mecánica cuántica y la filosofía, desplegando una compleja síntesis técnica de sonido e imagen para expresar concretamente sus perspectivas personales.</p>
   </div>
+</div>
+
+<!-- PÁRRAFO A LA IZQUIERDA -->
+<div class="seccion izquierda">
+  <div class="bloque-texto">
+    <p>Sus obras revelan las conexiones entre los intereses que lo impulsan y el mundo en general. Al mismo tiempo, las imágenes de las propias obras reúnen los elementos clásicos del arte de los nuevos medios, pareciendo encarnar la visión, compartida por muchos, de que la tecnología digital se ha convertido en el tema principal del arte actual.</p>
+  </div>
+</div>
+
+<style>
+  .subtitulo {
+    text-align: right;
+    font-family: "pragmatica-extended", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>
+
+<h2 class="subtitulo">Filosofía</h2>
 
   <script>
     const scrollBar = document.getElementById('scrollBar');
